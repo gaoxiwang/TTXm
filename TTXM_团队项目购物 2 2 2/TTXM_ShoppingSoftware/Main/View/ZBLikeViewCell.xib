@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="likeCell" rowHeight="133" id="MKG-sX-BPI" customClass="ZBLikeViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKG-sX-BPI" id="dzg-oT-0zX">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4N-2J-GNX">
+                        <rect key="frame" x="15" y="10" width="80" height="80"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="nSm-0j-nbB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是商品的名称 长长的长长的长长的" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pre-Yl-14P">
+                        <rect key="frame" x="105" y="18" width="246" height="24"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是商品的描述" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaF-wn-PFW">
+                        <rect key="frame" x="105" y="50" width="251" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="pre-Yl-14P" secondAttribute="trailing" constant="15" id="3Ec-Wj-Mhz"/>
+                    <constraint firstItem="pre-Yl-14P" firstAttribute="top" secondItem="dzg-oT-0zX" secondAttribute="topMargin" constant="10" id="7Bz-jP-n8x"/>
+                    <constraint firstItem="n4N-2J-GNX" firstAttribute="leading" secondItem="dzg-oT-0zX" secondAttribute="leading" constant="15" id="Hbj-OD-AVA"/>
+                    <constraint firstItem="NaF-wn-PFW" firstAttribute="top" secondItem="pre-Yl-14P" secondAttribute="bottom" constant="8" id="K0H-aM-Z1H"/>
+                    <constraint firstItem="n4N-2J-GNX" firstAttribute="top" secondItem="dzg-oT-0zX" secondAttribute="top" constant="10" id="eDY-b5-Oj1"/>
+                    <constraint firstItem="pre-Yl-14P" firstAttribute="leading" secondItem="n4N-2J-GNX" secondAttribute="trailing" constant="10" id="eSs-Me-hqb"/>
+                    <constraint firstAttribute="bottom" secondItem="n4N-2J-GNX" secondAttribute="bottom" constant="9" id="fOZ-JM-0gk"/>
+                    <constraint firstItem="NaF-wn-PFW" firstAttribute="leading" secondItem="n4N-2J-GNX" secondAttribute="trailing" constant="10" id="fxm-fj-f8Q"/>
+                    <constraint firstItem="NaF-wn-PFW" firstAttribute="top" secondItem="dzg-oT-0zX" secondAttribute="topMargin" constant="56" id="guB-wa-mjW"/>
+                    <constraint firstItem="NaF-wn-PFW" firstAttribute="top" secondItem="pre-Yl-14P" secondAttribute="bottom" constant="3" id="mTq-4R-slJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NaF-wn-PFW" secondAttribute="trailing" constant="10" id="vSD-2u-3yR"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="guB-wa-mjW"/>
+                        <exclude reference="mTq-4R-slJ"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="descLabel" destination="NaF-wn-PFW" id="qtM-Aq-Wa8"/>
+                <outlet property="myImageView" destination="n4N-2J-GNX" id="qb3-vB-aLC"/>
+                <outlet property="nameLabel" destination="pre-Yl-14P" id="Ugh-7L-Y8A"/>
+            </connections>
+            <point key="canvasLocation" x="766" y="360"/>
+        </tableViewCell>
+    </objects>
+</document>

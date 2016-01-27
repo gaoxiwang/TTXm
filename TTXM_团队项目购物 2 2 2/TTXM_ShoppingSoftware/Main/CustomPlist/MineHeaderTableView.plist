@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>我的身份</string>
+		<key>image</key>
+		<string>checkusertype_icon_identity</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>夜间模式</string>
+		<key>image</key>
+		<string>ic_more_night_mode</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>清除缓存</string>
+		<key>image</key>
+		<string>ic_more_action_clean_cache</string>
+	</dict>
+</array>
+</plist>
