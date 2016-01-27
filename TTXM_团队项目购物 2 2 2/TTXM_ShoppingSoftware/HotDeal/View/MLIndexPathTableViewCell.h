@@ -12,11 +12,7 @@
 
 /** 最底部的scrollView，用来掌控所有控件的滚动 */
 @property (nonatomic, strong) UIScrollView               *backgroundScrollView;
-
 @property (nonatomic, strong) HotDeaModel *model;
-
-/** 图文介绍viewController */
-@property (nonatomic, strong) UIImageView *introduceView;
 /** 评价tableview */
 @property (nonatomic, strong) UITableView *evaluationTableView;
 

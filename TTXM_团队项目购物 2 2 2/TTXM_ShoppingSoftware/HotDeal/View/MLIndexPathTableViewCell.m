@@ -8,7 +8,7 @@
 
 #import "MLIndexPathTableViewCell.h"
 
-@interface MLIndexPathTableViewCell ()<UITableViewDataSource,UITableViewDelegate>
+@interface MLIndexPathTableViewCell ()
 
 @end
 
@@ -43,48 +43,13 @@
     //    self.backgroundScrollView.delegate = self;
     [self.contentView addSubview:self.backgroundScrollView];
     
-    //图文介绍View
-    self.introduceView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    self.introduceView.backgroundColor =[UIColor whiteColor];
-    [self.backgroundScrollView addSubview:self.introduceView];
-    
-    
-    
-    
-    
-    
+  
     //评价tableView
     self.evaluationTableView = [[UITableView alloc]initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight)];
     self.evaluationTableView.backgroundColor =[UIColor grayColor];
     [self.backgroundScrollView addSubview:self.evaluationTableView];
     
 }
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 2;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-
-    return kScreenHeight;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
- 
-    
-    return cell;
-}
-
-
 
 
 
