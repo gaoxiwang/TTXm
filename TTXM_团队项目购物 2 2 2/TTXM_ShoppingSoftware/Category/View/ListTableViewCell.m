@@ -21,7 +21,8 @@
 
 -(void)draw
 {
-    _nameLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kWidth/4, kHeight/10)];
+    _nameLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kWidth/4, kHeight/14)];
+    _nameLable.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_nameLable];
 }
 - (void)awakeFromNib {
