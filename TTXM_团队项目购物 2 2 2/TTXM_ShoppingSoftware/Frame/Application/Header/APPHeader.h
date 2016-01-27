@@ -101,6 +101,7 @@
 #import "UPStackMenu.h"
 #import "PopViewLikeQQView.h"
 #import "ListTableViewCell.h"
+#import "HotListDetailViewController.h"
 
 
 

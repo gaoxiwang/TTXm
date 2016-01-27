@@ -661,6 +661,7 @@
         detail.urlString = urlString;
         [self.navigationController pushViewController:detail animated:YES];
     }
+    // !!!: 热门分类详情页面跳转
     else if (collectionView.tag == 200)
     {
         HotListCollectionViewController *hotlist = [HotListCollectionViewController new];

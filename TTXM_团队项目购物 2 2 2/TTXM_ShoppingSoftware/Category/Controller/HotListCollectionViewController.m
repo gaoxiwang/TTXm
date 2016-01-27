@@ -9,6 +9,7 @@
 #import "HotListCollectionViewController.h"
 
 @interface HotListCollectionViewController ()
+@property(assign,nonatomic)NSInteger fresh;
 
 @end
 
@@ -18,7 +19,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 
-
+//本身是collectioncontroller 所以先初始化 放到viewDidLoad里会提示flow为nil....
 -(id)init
 {
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
@@ -38,17 +39,29 @@ static NSString * const reuseIdentifier = @"Cell";
     _dataArray = [NSMutableArray array];
     
     
-    NSURL *url = [NSURL URLWithString:_urlString];
+    
+    [self json:_urlString];
+
+    
+
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(reshAction)];
+    
+    
+    // Do any additional setup after loading the view.
+}
+-(void)json:(NSString *)urlstring
+{
+    NSURL *url = [NSURL URLWithString:urlstring];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         
-            
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
-            NSMutableArray *arr = [dic[@"data"] objectForKey:@"items"];
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+        NSMutableArray *arr = [dic[@"data"] objectForKey:@"items"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-           
+            
             
             for (NSDictionary *dic in arr) {
                 HotList *model = [HotList new];
@@ -61,20 +74,22 @@ static NSString * const reuseIdentifier = @"Cell";
             self.collectionView.dataSource = self;
             [self.collectionView reloadData];
         });
-
-      
+        
+        
         
     }];
     
     [task resume];
+}
+-(void)reshAction
+{
+    [self.collectionView.mj_footer beginRefreshing];
     
-
-    
-
-
-    
-    
-    // Do any additional setup after loading the view.
+    _fresh += 20;
+    NSString *temp = [_urlString stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&offset=%ld",_fresh-20] withString:[NSString stringWithFormat:@"&offset=%ld",_fresh]];
+    _urlString = [NSString stringWithString:temp];
+    [self json:_urlString];
+    [self.collectionView.mj_footer endRefreshing];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
@@ -101,6 +116,20 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.priceLabel.text = model.price;
 
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HotList *model = [HotList new];
+    model = _dataArray[indexPath.row];
+    
+    
+    HotListDetailViewController *detail = [HotListDetailViewController new];
+    
+    detail.urlString = model.url;
+
+    
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

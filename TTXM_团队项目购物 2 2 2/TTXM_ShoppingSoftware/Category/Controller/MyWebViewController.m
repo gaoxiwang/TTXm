@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _webView = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight-15)];
+    //_webView = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     NSURLRequest *req = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:_string]];
     [_webView loadRequest:req];
     _webView.userInteractionEnabled = YES;

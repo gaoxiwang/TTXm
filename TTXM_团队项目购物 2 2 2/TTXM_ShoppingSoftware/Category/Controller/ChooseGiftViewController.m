@@ -63,8 +63,8 @@
     _collect.backgroundColor = [UIColor whiteColor];
     
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
-    [_collect addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+//    [_collect addGestureRecognizer:tap];
     
     
     NSURL *url = [NSURL URLWithString:@"http://api.liwushuo.com/v2/search/item_filter"];
@@ -483,12 +483,41 @@
     
 }
 //通过添加手势 实现点击collectionView把其推到最上层显示
--(void)tapAction:(UITapGestureRecognizer *)tap
+//-(void)tapAction:(UITapGestureRecognizer *)tap
+//{
+//    [self.view bringSubviewToFront:_collect];
+//    
+//}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.view bringSubviewToFront:_collect];
+    ChonseList *model = [ChonseList new];
+    model = _dataArray[indexPath.row];
+    NSString *temp = [NSString stringWithFormat:@"http://api.liwushuo.com/v2/items/%@",model.s_id];
+    
+    
+    NSURL *url = [NSURL URLWithString:temp];
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession]dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+            
+            NSString *urlString = [dic[@"data"] objectForKey:@"url"];
+            NSLog(@"%@",urlString);
+            HotListDetailViewController *detail = [HotListDetailViewController new];
+            detail.urlString = urlString;
+            [self.navigationController pushViewController:detail animated:YES];
+            
+            
+            
+        });
+        
+    }];
+    [task resume];
     
 }
-
 
 
 

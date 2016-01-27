@@ -19,5 +19,8 @@
 @property(strong,nonatomic)NSString *name;
 @property(strong,nonatomic)NSString *price;
 @property(strong,nonatomic)NSString *url;
+@property(strong,nonatomic)NSString *detail_html;
+@property(strong,nonatomic)NSString *purchase_url;
+
 
 @end
