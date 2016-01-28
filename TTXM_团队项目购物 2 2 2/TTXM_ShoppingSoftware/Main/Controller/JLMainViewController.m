@@ -80,27 +80,7 @@ static const CGFloat SelectViewHeight = 45;
     
     self.single = [UserSingle singleInOrNot];
     
-    if (!self.single.singleOrNot) {
-        
-        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(_imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
-        [self.button setTitle:@"未登录" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-    }else
-    {
-        
-        [self.button setTitle:@"注销" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
-    
-    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.view addSubview:self.button];
-    
- 
-}
+
 - (void)setUI
 {
     
@@ -332,6 +312,17 @@ static const CGFloat SelectViewHeight = 45;
     _imgView.image = [UIImage imageNamed:@"91.jpg"];
     [self.view addSubview:_imgView];
 
+<<<<<<< HEAD
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
+    imgView.center = self.topImageView.center;
+    imgView.alpha = 0.5;
+    imgView.layer.cornerRadius = 2*kGap;
+    imgView.layer.masksToBounds = YES;
+    imgView.image = [UIImage imageNamed:@"91.jpg"];
+    [self.view addSubview:imgView];
+    
+=======
+>>>>>>> d9c0da025a76c1a3bd86b29467cb81a4e7e46aaa
     if (!self.single.singleOrNot) {
 
         [self.button removeFromSuperview];

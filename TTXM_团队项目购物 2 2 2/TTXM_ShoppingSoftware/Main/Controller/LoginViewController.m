@@ -42,7 +42,7 @@
     }
     [AVUser logInWithUsernameInBackground:self.userNameTextField.text password:self.passwordTextField.text block:^(AVUser *user, NSError *error) {
         if (user) {
-            
+            NSLog(@"+_______+%@",user.username);
             UIAlertController *alertController=[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"登陆成功" preferredStyle:UIAlertControllerStyleAlert];
             
             self.single.singleOrNot = YES;
