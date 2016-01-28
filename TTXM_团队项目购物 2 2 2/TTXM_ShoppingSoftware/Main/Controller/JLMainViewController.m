@@ -80,30 +80,7 @@ static const CGFloat SelectViewHeight = 45;
     
     self.single = [UserSingle singleInOrNot];
     
-<<<<<<< HEAD
-=======
-    if (!self.single.singleOrNot) {
-        
-        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(_imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
-        [self.button setTitle:@"未登录" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-    }else
-    {
-        
-        [self.button setTitle:@"注销" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
-    
-    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.view addSubview:self.button];
-    
- 
->>>>>>> d9c0da025a76c1a3bd86b29467cb81a4e7e46aaa
-}
+
 - (void)setUI
 {
     
