@@ -58,9 +58,12 @@ static const CGFloat SelectViewHeight = 45;
 @property(nonatomic,strong) UIView *naviView1;
 /** 记录当前展示的tableView 计算顶部topView滑动的距离 */
 @property (nonatomic, weak  ) UITableView   *showingTableView;
-
+@property (strong,nonatomic) UserSingle *single;
+@property (strong,nonatomic) UIButton *button;
 
 @end
+
+
 
 @implementation JLMainViewController
 
@@ -72,6 +75,8 @@ static const CGFloat SelectViewHeight = 45;
     
     //初始化导航条上的内容
     [self setUpNavigtionBar];
+    
+    self.single = [UserSingle singleInOrNot];
 
 
     
@@ -167,6 +172,7 @@ static const CGFloat SelectViewHeight = 45;
     [self.view addSubview:self.subTitleLabel];
     
 }
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -295,7 +301,55 @@ static const CGFloat SelectViewHeight = 45;
         NSLog(@"-----------------------------------男");
         
     }
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
+    imgView.layer.cornerRadius = 2*kGap;
+    imgView.layer.masksToBounds = YES;
+    imgView.image = [UIImage imageNamed:@"91.jpg"];
+    [self.view addSubview:imgView];
+    
+    self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+    
+    if (!self.single.singleOrNot) {
+        
+        [self.button setTitle:@"未登录" forState:UIControlStateNormal];
+        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        NSLog(@"++++++%d",self.single.singleOrNot);
+        
+    }else
+    {
+         NSLog(@"++++++%d",self.single.singleOrNot);
+        [self.button removeFromSuperview];
+        [self.button setTitle:@"注销" forState:UIControlStateNormal];
+        [self.button addTarget:self action:@selector(zhuxiaoAction) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:self.button];
+    
+    
+    
 }
+
+-(void)zhuxiaoAction
+{
+    
+    [self.button setTitle:@"未登录" forState:UIControlStateNormal];
+    [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+    self.single.singleOrNot = NO;
+    
+}
+
+
+-(void)loginAction
+{
+    
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:loginVC animated:YES];
+    
+}
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {

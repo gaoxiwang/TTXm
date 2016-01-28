@@ -225,6 +225,15 @@
 		C2EA5F5A1C48C2F3009A8005 /* iconfont-remen.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EA5F591C48C2F3009A8005 /* iconfont-remen.png */; };
 		C2EA5F5C1C48C2F7009A8005 /* iconfont-fenlei.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EA5F5B1C48C2F7009A8005 /* iconfont-fenlei.png */; };
 		C2EA5F5E1C48C2FB009A8005 /* iconfont-wode.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EA5F5D1C48C2FB009A8005 /* iconfont-wode.png */; };
+		C2ED915C1C59BA2E00F0940B /* 91.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2ED915B1C59BA2E00F0940B /* 91.jpg */; settings = {ASSET_TAGS = (); }; };
+		C2ED91601C59BADB00F0940B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED915E1C59BADB00F0940B /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2ED91611C59BADB00F0940B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED915F1C59BADB00F0940B /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2ED91651C59C39E00F0940B /* ResigerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED91631C59C39E00F0940B /* ResigerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2ED91661C59C39E00F0940B /* ResigerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2ED91641C59C39E00F0940B /* ResigerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2ED916A1C59C7A100F0940B /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED91691C59C7A100F0940B /* AVOSCloud.framework */; settings = {ASSET_TAGS = (); }; };
+		C2ED916C1C59CE8D00F0940B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED916B1C59CE8D00F0940B /* MobileCoreServices.framework */; };
+		C2ED916E1C59CEA700F0940B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ED916D1C59CEA700F0940B /* CoreLocation.framework */; };
+		C2ED91711C59F2A100F0940B /* UserSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2ED91701C59F2A100F0940B /* UserSingle.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -604,6 +613,18 @@
 		C2EA5F591C48C2F3009A8005 /* iconfont-remen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-remen.png"; sourceTree = "<group>"; };
 		C2EA5F5B1C48C2F7009A8005 /* iconfont-fenlei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-fenlei.png"; sourceTree = "<group>"; };
 		C2EA5F5D1C48C2FB009A8005 /* iconfont-wode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-wode.png"; sourceTree = "<group>"; };
+		C2ED915B1C59BA2E00F0940B /* 91.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 91.jpg; sourceTree = "<group>"; };
+		C2ED915D1C59BADB00F0940B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C2ED915E1C59BADB00F0940B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C2ED915F1C59BADB00F0940B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C2ED91621C59C39E00F0940B /* ResigerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResigerViewController.h; sourceTree = "<group>"; };
+		C2ED91631C59C39E00F0940B /* ResigerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResigerViewController.m; sourceTree = "<group>"; };
+		C2ED91641C59C39E00F0940B /* ResigerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResigerViewController.xib; sourceTree = "<group>"; };
+		C2ED91691C59C7A100F0940B /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		C2ED916B1C59CE8D00F0940B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C2ED916D1C59CEA700F0940B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C2ED916F1C59F2A100F0940B /* UserSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSingle.h; sourceTree = "<group>"; };
+		C2ED91701C59F2A100F0940B /* UserSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSingle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,15 +632,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ED916E1C59CEA700F0940B /* CoreLocation.framework in Frameworks */,
+				B23687C21C524E3700F5AE9F /* CoreTelephony.framework in Frameworks */,
+				C2ED916C1C59CE8D00F0940B /* MobileCoreServices.framework in Frameworks */,
+				B23687B81C524DC000F5AE9F /* SystemConfiguration.framework in Frameworks */,
 				B23689361C52574000F5AE9F /* libSocialQQ.a in Frameworks */,
 				B236892C1C52574000F5AE9F /* libUMSocial_Sdk_4.4.a in Frameworks */,
 				B23687C61C524ED900F5AE9F /* libz.tbd in Frameworks */,
 				B23687C41C524EC600F5AE9F /* libstdc++.tbd in Frameworks */,
 				B236893A1C52574000F5AE9F /* libWeChatSDK.a in Frameworks */,
-				B23687C21C524E3700F5AE9F /* CoreTelephony.framework in Frameworks */,
+				C2ED916A1C59C7A100F0940B /* AVOSCloud.framework in Frameworks */,
 				B23687C01C524DFD00F5AE9F /* libsqlite3.tbd in Frameworks */,
 				B23687BE1C524DEB00F5AE9F /* CoreGraphics.framework in Frameworks */,
-				B23687B81C524DC000F5AE9F /* SystemConfiguration.framework in Frameworks */,
 				B23689371C52574000F5AE9F /* TencentOpenAPI.framework in Frameworks */,
 				B23687BC1C524DE000F5AE9F /* libiconv.tbd in Frameworks */,
 				B23689391C52574000F5AE9F /* libSocialWechat.a in Frameworks */,
@@ -678,6 +702,8 @@
 				B23688591C5255BF00F5AE9F /* ZBMineidentityTool.m */,
 				B236885A1C5255BF00F5AE9F /* ZBNSKeyedArchiverTool.h */,
 				B236885B1C5255BF00F5AE9F /* ZBNSKeyedArchiverTool.m */,
+				C2ED916F1C59F2A100F0940B /* UserSingle.h */,
+				C2ED91701C59F2A100F0940B /* UserSingle.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -716,6 +742,13 @@
 				B23688711C5255BF00F5AE9F /* JLMineidentityController.m */,
 				B23688721C5255BF00F5AE9F /* JLStrategyController.h */,
 				B23688731C5255BF00F5AE9F /* JLStrategyController.m */,
+				C2ED915D1C59BADB00F0940B /* LoginViewController.h */,
+				C2ED915E1C59BADB00F0940B /* LoginViewController.m */,
+				C2ED915F1C59BADB00F0940B /* LoginViewController.xib */,
+				C2ED91621C59C39E00F0940B /* ResigerViewController.h */,
+				C2ED91631C59C39E00F0940B /* ResigerViewController.m */,
+				C2ED91641C59C39E00F0940B /* ResigerViewController.xib */,
+				C2ED915B1C59BA2E00F0940B /* 91.jpg */,
 				B23688741C5255BF00F5AE9F /* Man.png */,
 				B23688751C5255BF00F5AE9F /* setting.png */,
 				B23688761C5255BF00F5AE9F /* Women.png */,
@@ -1355,6 +1388,8 @@
 		C2EA5E9B1C4897C4009A8005 = {
 			isa = PBXGroup;
 			children = (
+				C2ED916D1C59CEA700F0940B /* CoreLocation.framework */,
+				C2ED916B1C59CE8D00F0940B /* MobileCoreServices.framework */,
 				C2EA5EA61C4897C4009A8005 /* TTXM_ShoppingSoftware */,
 				C2EA5EA51C4897C4009A8005 /* Products */,
 			);
@@ -1550,6 +1585,7 @@
 		C2EA5F281C489BA9009A8005 /* TheThird */ = {
 			isa = PBXGroup;
 			children = (
+				C2ED91671C59C7A100F0940B /* release-v3.2.2 */,
 				C20A4C731C530C6A00EAA85A /* Reachability */,
 				B2EEBAF91C525DCA00C697C7 /* SCNavTabBar 2 */,
 				B2EEBADC1C525DC300C697C7 /* AFNetworking */,
@@ -1588,6 +1624,22 @@
 				C2EA5F4C1C48A213009A8005 /* time_article.png */,
 			);
 			path = UserGuideImage;
+			sourceTree = "<group>";
+		};
+		C2ED91671C59C7A100F0940B /* release-v3.2.2 */ = {
+			isa = PBXGroup;
+			children = (
+				C2ED91681C59C7A100F0940B /* Static */,
+			);
+			path = "release-v3.2.2";
+			sourceTree = "<group>";
+		};
+		C2ED91681C59C7A100F0940B /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				C2ED91691C59C7A100F0940B /* AVOSCloud.framework */,
+			);
+			path = Static;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1657,6 +1709,7 @@
 				C2EA5EB71C4897C4009A8005 /* LaunchScreen.storyboard in Resources */,
 				C2EA5F551C48A213009A8005 /* time_article.png in Resources */,
 				B236889D1C5255BF00F5AE9F /* Man.png in Resources */,
+				C2ED915C1C59BA2E00F0940B /* 91.jpg in Resources */,
 				B23688931C5255BF00F5AE9F /* AboutOurs.jpg in Resources */,
 				B2EEBA9E1C525C2000C697C7 /* 789.png in Resources */,
 				B236893E1C52574000F5AE9F /* ios-social-sdk-comment-quick.html in Resources */,
@@ -1701,6 +1754,7 @@
 				B239742D1C4E834300CF7D71 /* 返回.png in Resources */,
 				B23689401C52574000F5AE9F /* ios-social-sdk-login-detail.html in Resources */,
 				B23689381C52574000F5AE9F /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				C2ED91661C59C39E00F0940B /* ResigerViewController.xib in Resources */,
 				B236893B1C52574000F5AE9F /* iOS-social-analytics-releasenote.html in Resources */,
 				C2E921661C575A1100601C2C /* Images.xcassets in Resources */,
 				B23689311C52574000F5AE9F /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -1712,6 +1766,7 @@
 				B23689321C52574000F5AE9F /* UMSLoginViewController.xib in Resources */,
 				B23689411C52574000F5AE9F /* ios-social-sdk-login-quick.html in Resources */,
 				B29557A11C493C5600FAA534 /* 钱.png in Resources */,
+				C2ED91611C59BADB00F0940B /* LoginViewController.xib in Resources */,
 				B23688A11C5255BF00F5AE9F /* MineHeaderTableView2.plist in Resources */,
 				C2EA5F4F1C48A213009A8005 /* 3_image.jpg in Resources */,
 				B236889E1C5255BF00F5AE9F /* setting.png in Resources */,
@@ -1731,6 +1786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ED91651C59C39E00F0940B /* ResigerViewController.m in Sources */,
 				C2E923081C575CF100601C2C /* UPStackMenu.m in Sources */,
 				B236888D1C5255BF00F5AE9F /* ZBHttpTool.m in Sources */,
 				C2EA5F2F1C489D22009A8005 /* HQTabBarController.m in Sources */,
@@ -1766,6 +1822,7 @@
 				B2EEBAD91C525C2000C697C7 /* SearchCollectionCell.m in Sources */,
 				B2EEBB071C525DCA00C697C7 /* SCPopView.m in Sources */,
 				B23688911C5255BF00F5AE9F /* UIImage+ZBTint.m in Sources */,
+				C2ED91711C59F2A100F0940B /* UserSingle.m in Sources */,
 				C20A4C761C530C6A00EAA85A /* Reachability.m in Sources */,
 				B23688F01C5256C800F5AE9F /* MJRefreshNormalHeader.m in Sources */,
 				B2EEBA911C525C2000C697C7 /* HQHomeViewController.m in Sources */,
@@ -1784,6 +1841,7 @@
 				B2EEBA981C525C2000C697C7 /* GiftClassifyModel.m in Sources */,
 				B2EEBAD51C525C2000C697C7 /* CollectionViewCell.m in Sources */,
 				B23689691C5257D000F5AE9F /* MKAnnotationView+WebCache.m in Sources */,
+				C2ED91601C59BADB00F0940B /* LoginViewController.m in Sources */,
 				B23688A91C5255BF00F5AE9F /* ZBStrategyViewCell.m in Sources */,
 				B236888F1C5255BF00F5AE9F /* ZBNSKeyedArchiverTool.m in Sources */,
 				C2EA5F321C489D4F009A8005 /* HQNavigationController.m in Sources */,
@@ -1987,6 +2045,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Main/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/release-v3.2.2/Static",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TTXM_ShoppingSoftware/PrefixHeader.pch";
@@ -2000,6 +2059,13 @@
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/Wechat",
+				);
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-lc++",
+					"-ObjC",
+					"-licucore",
+					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.TTXM-ShoppingSoftware";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2014,6 +2080,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Main/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/release-v3.2.2/Static",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TTXM_ShoppingSoftware/PrefixHeader.pch";
@@ -2027,6 +2094,13 @@
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXM_ShoppingSoftware/Frame/TheThird/UMSocial_Sdk_Extra_Frameworks/Wechat",
+				);
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-lc++",
+					"-ObjC",
+					"-licucore",
+					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.TTXM-ShoppingSoftware";
 				PRODUCT_NAME = "$(TARGET_NAME)";

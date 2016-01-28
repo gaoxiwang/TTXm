@@ -19,5 +19,7 @@
 #import "AFNetworking.h"
 
 #import "Reachability.h"
+#import <AVOSCloud/AVOSCloud.h>
+
 
 #endif
