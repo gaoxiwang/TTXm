@@ -79,7 +79,7 @@ static const CGFloat SelectViewHeight = 45;
     [self setUpNavigtionBar];
     
     self.single = [UserSingle singleInOrNot];
-    
+}
 
 - (void)setUI
 {
@@ -312,17 +312,8 @@ static const CGFloat SelectViewHeight = 45;
     _imgView.image = [UIImage imageNamed:@"91.jpg"];
     [self.view addSubview:_imgView];
 
-<<<<<<< HEAD
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
-    imgView.center = self.topImageView.center;
-    imgView.alpha = 0.5;
-    imgView.layer.cornerRadius = 2*kGap;
-    imgView.layer.masksToBounds = YES;
-    imgView.image = [UIImage imageNamed:@"91.jpg"];
-    [self.view addSubview:imgView];
-    
-=======
->>>>>>> d9c0da025a76c1a3bd86b29467cb81a4e7e46aaa
+
+
     if (!self.single.singleOrNot) {
 
         [self.button removeFromSuperview];
