@@ -77,9 +77,33 @@ static const CGFloat SelectViewHeight = 45;
     [self setUpNavigtionBar];
     
     self.single = [UserSingle singleInOrNot];
-
-
     
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
+    imgView.layer.cornerRadius = 2*kGap;
+    imgView.layer.masksToBounds = YES;
+    imgView.image = [UIImage imageNamed:@"91.jpg"];
+    [self.view addSubview:imgView];
+    
+    if (!self.single.singleOrNot) {
+        
+        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+        [self.button setTitle:@"未登录" forState:UIControlStateNormal];
+        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+    }else
+    {
+        
+        [self.button setTitle:@"注销" forState:UIControlStateNormal];
+        [self.button addTarget:self action:@selector(zhuxiaoAction) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    
+    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:self.button];
+    
+ 
 }
 - (void)setUI
 {
@@ -302,32 +326,20 @@ static const CGFloat SelectViewHeight = 45;
         
     }
     
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
-    imgView.layer.cornerRadius = 2*kGap;
-    imgView.layer.masksToBounds = YES;
-    imgView.image = [UIImage imageNamed:@"91.jpg"];
-    [self.view addSubview:imgView];
-    
-    self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
-    
     if (!self.single.singleOrNot) {
+        
         
         [self.button setTitle:@"未登录" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        NSLog(@"++++++%d",self.single.singleOrNot);
+        
         
     }else
     {
-         NSLog(@"++++++%d",self.single.singleOrNot);
-        [self.button removeFromSuperview];
+        
         [self.button setTitle:@"注销" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(zhuxiaoAction) forControlEvents:UIControlEventTouchUpInside];
         
     }
-    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.view addSubview:self.button];
-    
     
     
 }
@@ -337,7 +349,8 @@ static const CGFloat SelectViewHeight = 45;
     
     [self.button setTitle:@"未登录" forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    self.single.singleOrNot = NO;
+     self.single.singleOrNot = NO;
+   
     
 }
 
