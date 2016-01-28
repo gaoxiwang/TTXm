@@ -325,26 +325,13 @@ static const CGFloat SelectViewHeight = 45;
         
     }
     
-<<<<<<< HEAD
-    if (!self.single.singleOrNot) {
-        
-        
-        [self.button setTitle:@"未登录" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-    }else
-    {
-        
-=======
+
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
     imgView.layer.cornerRadius = 2*kGap;
     imgView.layer.masksToBounds = YES;
     imgView.image = [UIImage imageNamed:@"91.jpg"];
     [self.view addSubview:imgView];
     
-
-    
     if (!self.single.singleOrNot) {
 
         [self.button removeFromSuperview];
@@ -352,36 +339,26 @@ static const CGFloat SelectViewHeight = 45;
         self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
         [self.button setTitle:@"未登录" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.button];
     }else
     {
         
         [self.button removeFromSuperview];
         self.button = [UIButton buttonWithType:UIButtonTypeCustom];
         self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
->>>>>>> a3e4fc1e63dcbd1151b3c891079d286a6e90b642
+
         [self.button setTitle:@"注销" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.button];
         
         [self reloadInputViews];
     }
-<<<<<<< HEAD
+
     
     
 }
 
--(void)zhuxiaoAction
-{
-    
-    [self.button setTitle:@"未登录" forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-     self.single.singleOrNot = NO;
-   
-=======
-    [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.view addSubview:self.button];
->>>>>>> a3e4fc1e63dcbd1151b3c891079d286a6e90b642
-    
-}
+
 -(void)loginAction
 {
     if ([_button.currentTitle isEqualToString:@"未登录"]) {
