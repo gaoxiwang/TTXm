@@ -60,6 +60,8 @@ static const CGFloat SelectViewHeight = 45;
 @property (nonatomic, weak  ) UITableView   *showingTableView;
 @property (strong,nonatomic) UserSingle *single;
 @property (strong,nonatomic) UIButton *button;
+@property(strong,nonatomic)UIImageView *imgView;
+
 
 @end
 
@@ -78,16 +80,10 @@ static const CGFloat SelectViewHeight = 45;
     
     self.single = [UserSingle singleInOrNot];
     
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
-    imgView.layer.cornerRadius = 2*kGap;
-    imgView.layer.masksToBounds = YES;
-    imgView.image = [UIImage imageNamed:@"91.jpg"];
-    [self.view addSubview:imgView];
-    
     if (!self.single.singleOrNot) {
         
         self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(_imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
         [self.button setTitle:@"未登录" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         
@@ -96,7 +92,7 @@ static const CGFloat SelectViewHeight = 45;
     {
         
         [self.button setTitle:@"注销" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(zhuxiaoAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         
     }
     
@@ -192,7 +188,7 @@ static const CGFloat SelectViewHeight = 45;
     self.subTitleLabel.textAlignment = NSTextAlignmentLeft;
     self.subTitleLabel.textColor = [UIColor whiteColor];
     self.subTitleLabel.font = [UIFont systemFontOfSize:16];
-    self.subTitleLabel.text = @"这里收藏着您喜欢的礼物和攻略";
+    //self.subTitleLabel.text = @"这里收藏着您喜欢的礼物和攻略";
     [self.view addSubview:self.subTitleLabel];
     
 }
@@ -216,6 +212,10 @@ static const CGFloat SelectViewHeight = 45;
         CGRect headRect = self.topView.frame;
         headRect.origin.y -= seleOffsetY;
         self.topView.frame = headRect;
+        CGPoint p = _topView.center;
+        
+        _button.center = CGPointMake(p.x, p.y+ 3.5f*kGap);
+        _imgView.center = _topView.center;
         
         
         //根据偏移量算出alpha的值,渐隐,当偏移量大于-180开始计算消失的值
@@ -325,18 +325,18 @@ static const CGFloat SelectViewHeight = 45;
         
     }
     
+    [_imgView removeFromSuperview];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
+    _imgView.layer.cornerRadius = 2*kGap;
+    _imgView.layer.masksToBounds = YES;
+    _imgView.image = [UIImage imageNamed:@"91.jpg"];
+    [self.view addSubview:_imgView];
 
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(kGap *8, kHeight *1/9, 4*kGap, 4*kGap)];
-    imgView.layer.cornerRadius = 2*kGap;
-    imgView.layer.masksToBounds = YES;
-    imgView.image = [UIImage imageNamed:@"91.jpg"];
-    [self.view addSubview:imgView];
-    
     if (!self.single.singleOrNot) {
 
         [self.button removeFromSuperview];
         self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(_imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
         [self.button setTitle:@"未登录" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.button];
@@ -345,7 +345,7 @@ static const CGFloat SelectViewHeight = 45;
         
         [self.button removeFromSuperview];
         self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(_imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
 
         [self.button setTitle:@"注销" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
