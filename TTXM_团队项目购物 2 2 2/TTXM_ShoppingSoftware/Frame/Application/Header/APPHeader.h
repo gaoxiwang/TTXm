@@ -104,10 +104,13 @@
 #import "HotListDetailViewController.h"
 
 
-
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define  kHeight [UIScreen mainScreen].bounds.size.height
+#define kGap kWidth/20
 
+#import "LoginViewController.h"
+#import "ResigerViewController.h"
+#import "UserSingle.h"
 
 
 

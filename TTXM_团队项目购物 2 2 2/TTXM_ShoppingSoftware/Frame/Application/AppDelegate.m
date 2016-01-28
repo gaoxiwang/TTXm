@@ -55,6 +55,11 @@
     //设置微信AppId、appSecret，分享url
     [UMSocialWechatHandler setWXAppId:@"wxe748380a414bc7c4" appSecret:@"fbca17bfd07aeaf9fce9a13652d96b70" url:@"http://www.umeng.com/social"];
     
+    [AVOSCloud setApplicationId:@"XmRuROzYyFjzd7wPVUGgAm4l-gzGzoHsz"
+                      clientKey:@"8RABTbWUz3A8Q8rUtVJKglnH"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
     return YES;
 }
 
