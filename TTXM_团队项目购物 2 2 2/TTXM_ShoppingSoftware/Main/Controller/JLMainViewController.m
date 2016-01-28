@@ -291,14 +291,13 @@ static const CGFloat SelectViewHeight = 45;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     ZBMineidentityTool *identityTool = [ZBMineidentityTool sharedZBMineidentityTool];
     if ([identityTool.gender isEqual:@2]) {
-        NSLog(@"-----------------------------------女");
+
         self.tabBarItem.image = [UIImage imageNamed:@"Women"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"Women"];
         
     }else {
         self.tabBarItem.image = [UIImage imageNamed:@"Man"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"Man"];
-        NSLog(@"-----------------------------------男");
         
     }
     
@@ -308,49 +307,52 @@ static const CGFloat SelectViewHeight = 45;
     imgView.image = [UIImage imageNamed:@"91.jpg"];
     [self.view addSubview:imgView];
     
-    self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+
     
     if (!self.single.singleOrNot) {
-        
+
+        [self.button removeFromSuperview];
+        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
         [self.button setTitle:@"未登录" forState:UIControlStateNormal];
         [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        NSLog(@"++++++%d",self.single.singleOrNot);
-        
     }else
     {
-         NSLog(@"++++++%d",self.single.singleOrNot);
-        [self.button removeFromSuperview];
-        [self.button setTitle:@"注销" forState:UIControlStateNormal];
-        [self.button addTarget:self action:@selector(zhuxiaoAction) forControlEvents:UIControlEventTouchUpInside];
         
+        [self.button removeFromSuperview];
+        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.button.frame = CGRectMake(kGap *8, CGRectGetMaxY(imgView.frame) + 0.5f*kGap, 4*kGap, kGap);
+        [self.button setTitle:@"注销" forState:UIControlStateNormal];
+        [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self reloadInputViews];
     }
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.view addSubview:self.button];
     
-    
-    
 }
-
--(void)zhuxiaoAction
-{
-    
-    [self.button setTitle:@"未登录" forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    self.single.singleOrNot = NO;
-    
-}
-
-
 -(void)loginAction
 {
+    if ([_button.currentTitle isEqualToString:@"未登录"]) {
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }
     
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
-    [self.navigationController pushViewController:loginVC animated:YES];
+    else if ([_button.currentTitle isEqualToString:@"注销"])
+    {
+        UIAlertController *test = [UIAlertController alertControllerWithTitle:@"提示" message:@"注销成功" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"sure" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [self.button setTitle:@"未登录" forState:UIControlStateNormal];
+            [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+            [self reloadInputViews];
+        }];
+        [test addAction:sure];
+        
+        [self presentViewController:test animated:YES completion:nil];
+    }
+
     
 }
-
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
