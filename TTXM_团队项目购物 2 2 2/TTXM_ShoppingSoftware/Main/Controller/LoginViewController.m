@@ -42,10 +42,24 @@
     }
     [AVUser logInWithUsernameInBackground:self.userNameTextField.text password:self.passwordTextField.text block:^(AVUser *user, NSError *error) {
         if (user) {
-            NSLog(@"+_______+%@",user.username);
+            
             UIAlertController *alertController=[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"登陆成功" preferredStyle:UIAlertControllerStyleAlert];
             
             self.single.singleOrNot = YES;
+            
+            
+            NSLog(@"_______++++++++%d",self.single.singleOrNot);
+            
+            if (self.single.singleOrNot) {
+                
+                [MLIndexPathTableViewController shareUserName].userName = self.userNameTextField.text;
+                [MLIndexPathTableViewController shareUserName].passWord = self.passwordTextField.text;
+                [MLIndexPathTableViewController shareUserName].objectId = user.objectId;
+                NSLog(@"()()()()()()%@",[MLIndexPathTableViewController shareUserName].userName);
+                
+            }
+
+            
             
             [self presentViewController:alertController animated:YES completion:nil];
             
@@ -61,6 +75,8 @@
             
         }
     }];
+    
+    
     
 
 }

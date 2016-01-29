@@ -34,6 +34,25 @@
 @end
 
 @implementation MLIndexPathTableViewController
+
++ (instancetype)shareUserName
+{
+    
+    static MLIndexPathTableViewController *str = nil;
+    if (str == nil) {
+        static dispatch_once_t token;
+        dispatch_once(&token, ^{
+            str = [[MLIndexPathTableViewController alloc] init];
+            str.userName = [NSString new];
+            str.passWord = [NSString new];
+            
+        });
+    }
+    return str;
+}
+
+
+
 //当点击进入该页的时候隐藏底部导航栏
 -(instancetype)initWithStyle:(UITableViewStyle)style{
 
@@ -44,6 +63,8 @@
 
     return self;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +78,40 @@
     [self Floating];
     //轮播tabelView头部
     [self makeHeader];
+    NSLog(@"++++++++()()()%@",[MLIndexPathTableViewController shareUserName].userName);
+    
+//    AVUser *currentUser = [AVUser currentUser];
+//    if (currentUser != nil) {
+//        // 允许用户使用应用
+//        
+//    } else {
+//        //缓存用户对象为空时，可打开用户注册界面…
+//    }
+    
+//    if ([UserSingle singleInOrNot].singleOrNot) {
+//        AVObject *post = [AVObject objectWithClassName:@"Sal"];
+//        [post setObject:self.model.price forKey:@"price"];
+//        [post setObject:self.model.cover_image_url forKey:@"image"];
+//        [post setObject:[MLIndexPathTableViewController shareUserName].objectId forKey:@"ID_objectId"];
+//        [post save];
+//        
+//        
+//        AVQuery *query = [AVQuery queryWithClassName:@"Sal"];
+//        [query whereKey:@"ID_objectId" equalTo:[MLIndexPathTableViewController shareUserName].objectId];
+//        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//            if (!error) {
+//                // 检索成功
+//                AVObject *sb = objects[0];
+//                NSLog(@"------------%@",[sb objectForKey:@"content"]);
+//            } else {
+//                // 输出错误信息
+//                NSLog(@"Error: %@ %@", error, [error userInfo]);
+//            }
+//        }];
+//    }
+
 }
+
 //浮窗
 -(void)Floating {
 
@@ -109,6 +163,7 @@
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.navigationView];
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.collectionButton];
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.taobaoButton];
+    
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -211,11 +266,9 @@
         
         //购物Button
         self.shoping =[UIButton buttonWithType:(UIButtonTypeSystem)];
-        self.shoping.frame=CGRectMake(CGRectGetMaxX(self.picLabel.frame)+130, CGRectGetMaxY(self.nameLabel.frame)+10, 50, 20);
-        self.shoping.layer.cornerRadius = 10;
-        self.shoping.layer.masksToBounds = YES;
-        self.shoping.backgroundColor=[UIColor colorWithRed:244/256.0 green:83/256.0 blue:90/256.0 alpha:1];
-        [self.shoping setTitle:@"购物" forState:UIControlStateNormal];
+        self.shoping.frame=CGRectMake(CGRectGetMaxX(self.picLabel.frame)+130, CGRectGetMaxY(self.nameLabel.frame)+5, 70, 40);
+        [self.shoping  setImage:[[UIImage imageNamed:@"iconfont-gouwuche"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+        
         [self.shoping addTarget:self action:@selector(shopingAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.shoping setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];//高亮状态
         [hedView addSubview:self.shoping];
@@ -313,7 +366,9 @@
     
     
     
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.model.url]]];
+    
     //加载
     [webView loadRequest:request];
     
@@ -325,7 +380,7 @@
 
 -(void)rightAction:(UIButton *)senter{
 
-        
+    
         [[UIApplication sharedApplication].delegate.window sendSubviewToBack:self.navigationView];
         [[UIApplication sharedApplication].delegate.window sendSubviewToBack:self.collectionButton];
         [[UIApplication sharedApplication].delegate.window sendSubviewToBack:self.taobaoButton];
@@ -359,11 +414,38 @@
 //购物点击事件
 -(void)shopingAction:(UIButton *)button{
     
+    if ([UserSingle singleInOrNot].singleOrNot) {
+        
+        AVObject *post = [AVObject objectWithClassName:@"Sal"];
+        [post setObject:self.model.price forKey:@"price"];
+        [post setObject:self.model.cover_image_url forKey:@"image"];
+        [post setObject:[MLIndexPathTableViewController shareUserName].objectId forKey:@"ID_objectId"];
+        [post save];
+        
+    }else
+    {
     
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未登录,请先登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(登陆) userInfo:nil repeats:NO];
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
     
-    
-    
+    }
 }
+
+-(void)登陆
+{
+
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:loginVC animated:YES];
+
+
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -16,4 +16,13 @@
 @property (nonatomic,strong) UILabel *descriptionLabel;
 //购物Button
 @property (nonatomic,strong) UIButton *shoping;
+
+@property (strong,nonatomic)NSString *userName;
+@property (strong,nonatomic)NSString *passWord;
+@property (strong,nonatomic)NSString *objectId;
+
++(instancetype)shareUserName;
+
+
+
 @end
