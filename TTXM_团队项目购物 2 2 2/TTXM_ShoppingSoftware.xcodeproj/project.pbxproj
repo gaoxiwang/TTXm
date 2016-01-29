@@ -170,6 +170,7 @@
 		C20A4C721C530A8200EAA85A /* DetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20A4C711C530A8200EAA85A /* DetailWebViewController.m */; };
 		C20A4C761C530C6A00EAA85A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C20A4C751C530C6A00EAA85A /* Reachability.m */; };
 		C20A4C781C5312D800EAA85A /* iconfont-wuwangluo01.png in Resources */ = {isa = PBXBuildFile; fileRef = C20A4C771C5312D800EAA85A /* iconfont-wuwangluo01.png */; };
+		C21F46181C5B434100E0076F /* iconfont-gouwuche.png in Resources */ = {isa = PBXBuildFile; fileRef = C21F46171C5B434100E0076F /* iconfont-gouwuche.png */; settings = {ASSET_TAGS = (); }; };
 		C2C47AE71C58BD7100A42227 /* HotListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C47AE61C58BD7100A42227 /* HotListDetailViewController.m */; };
 		C2D5E0701C578DC3004176BF /* SomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5E06F1C578DC3004176BF /* SomeCollectionViewCell.m */; };
 		C2D5E0731C5792AE004176BF /* SomeSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5E0721C5792AE004176BF /* SomeSearchModel.m */; };
@@ -517,6 +518,7 @@
 		C20A4C741C530C6A00EAA85A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C20A4C751C530C6A00EAA85A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C20A4C771C5312D800EAA85A /* iconfont-wuwangluo01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-wuwangluo01.png"; sourceTree = "<group>"; };
+		C21F46171C5B434100E0076F /* iconfont-gouwuche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-gouwuche.png"; sourceTree = "<group>"; };
 		C2C47AE51C58BD7100A42227 /* HotListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListDetailViewController.h; sourceTree = "<group>"; };
 		C2C47AE61C58BD7100A42227 /* HotListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListDetailViewController.m; sourceTree = "<group>"; };
 		C2D5E06E1C578DC3004176BF /* SomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1484,6 +1486,7 @@
 		C2EA5EF11C489B8B009A8005 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C21F46171C5B434100E0076F /* iconfont-gouwuche.png */,
 				B29557A01C493C5600FAA534 /* 钱.png */,
 				B29557A21C493FFC00FAA534 /* 收藏.png */,
 				B239742C1C4E834300CF7D71 /* 返回.png */,
@@ -1724,6 +1727,7 @@
 				B2EEBADA1C525C2000C697C7 /* SearchCollectionCell.xib in Resources */,
 				B23689331C52574000F5AE9F /* UMSnsAccountViewController.xib in Resources */,
 				B2EEBAD71C525C2000C697C7 /* OtherTableViewCell.xib in Resources */,
+				C21F46181C5B434100E0076F /* iconfont-gouwuche.png in Resources */,
 				B23688A61C5255BF00F5AE9F /* ZBIdentityFooder.xib in Resources */,
 				C2EA5F511C48A213009A8005 /* helight.png in Resources */,
 				B23688F21C5256C800F5AE9F /* MJRefresh.bundle in Resources */,

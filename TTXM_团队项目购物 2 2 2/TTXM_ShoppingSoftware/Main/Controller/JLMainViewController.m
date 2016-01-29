@@ -355,6 +355,7 @@ static const CGFloat SelectViewHeight = 45;
         UIAlertAction *sure = [UIAlertAction actionWithTitle:@"sure" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             [self.button setTitle:@"未登录" forState:UIControlStateNormal];
             [self.button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+            self.single.singleOrNot = NO;
             [self reloadInputViews];
         }];
         [test addAction:sure];
