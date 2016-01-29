@@ -344,6 +344,7 @@ static const CGFloat SelectViewHeight = 45;
 -(void)loginAction
 {
     if ([_button.currentTitle isEqualToString:@"未登录"]) {
+        
         LoginViewController *loginVC = [[LoginViewController alloc] init];
         [self.navigationController pushViewController:loginVC animated:YES];
     }

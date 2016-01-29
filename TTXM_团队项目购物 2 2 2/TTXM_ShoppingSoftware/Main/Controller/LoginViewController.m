@@ -47,7 +47,12 @@
             
             self.single.singleOrNot = YES;
             
+            
+            
+            
+            
             [self presentViewController:alertController animated:YES completion:nil];
+            
             
             [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(登陆成功) userInfo:nil repeats:NO];
             
